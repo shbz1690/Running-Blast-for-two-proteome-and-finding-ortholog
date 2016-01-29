@@ -139,23 +139,6 @@ def ortholog(p_id):
             print "both proteins are Functional ORTHOLOG"
         else:
             print "both proteins are not Functional ORTHOLOG"
-
-def check_ortholog(pid1,pid2):
-    pid_list=[]
-    pidentity=[]
-    for i in pid1,pid2:
-        a=blast_result(i)
-        if a is not None:
-            print
-            pid_list.append(a[0])
-            pidentity.append(a[2]/float(a[1]))
-        else:
-            break
-    if len(pid_list)>1:
-        if int(pid_list[0])==pid2 and pidentity[0]>.6 and pidentity[1]>.6:
-            print "both proteins are Functional ORTHOLOG"
-        else:
-            print "both proteins are not Functional ORTHOLOG"
     
     
 def print_align(qs,m,ss):
